@@ -40,6 +40,9 @@ app.get('/', function (req, res) {
     res.sendStatus(200)
 })
 
+  const token = EAAIxZCz7lbwwBAFYRkAhYPVqKQMX8vOa1SsQy0tc2DfFrE7Im0WUcYNCZB3ZApuJE5ZBjFq7T8LVAMQSUMoZCt3XUbZAyBH2xc2N1aji5t6lKTCCPgbGcN7pG9XqD9qbU8A99ShyZCCWm5ndc0ach4JsN17CrXMZBWeQZApN8Pw8M3AZDZD
+
+
   function sendTextMessage(sender, text) {
     let messageData = { text:text }
     request({
