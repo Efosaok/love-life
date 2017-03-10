@@ -19,16 +19,13 @@ app.get('/', function (req, res) {
 })
 
 // for Facebook verification
-app.get('/webhook', function(req, res) {
-  if (req.query['hub.mode'] === 'subscribe' &&
-      req.query['hub.verify_token'] === <VERIFY_TOKEN>) {
-    console.log("Validating webhook");
-    res.status(200).send(req.query['hub.challenge']);
-  } else {
-    console.error("Failed validation. Make sure the validation tokens match.");
-    res.sendStatus(403);          
-  }  
-});
+  app.get('/webhook', function (req, res) {
+    if (req.query['hub.verify_token'] === 'MY_VOICE') {
+      res.send(req.query['hub.challenge']);
+    } else {
+      res.send('Error, wrong validation token');    
+    }
+  });
 
 // Spin up the server
 app.listen(app.get('port'), function() {
